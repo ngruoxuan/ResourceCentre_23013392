@@ -5,6 +5,7 @@ class item():
         self._dueDate = ""
         self._isAvailable = True
 
+        
     def getAssetTag(self):
         return self._assetTag
 
