@@ -18,7 +18,22 @@ class ResourceCenter:
             if not 1 <= choice <= 5:
                 print("Invalid choice, please enter again.\n")
         return choice
+    
+    def printheader(self,message):
+            print("")
+            print("==============================================")
+            print(message)
+            print("==============================================")
 
+    def selectItemType(self):
+            print("\nItem types:")
+            print("1. Digital Camera")
+            print("2. Laptop")
+            option = int(input("Enter option to select item type >"))
+            return option
+
+                
+            
     def main(self):
         # Refactor (A): Extract constants for choice integers
         # Refactor (A): Extract constants for option integers
@@ -31,18 +46,14 @@ class ResourceCenter:
 
             if choice == 1:
                 # Refactor (B): use printHeader(mesage)
-                print("")
-                print("==============================================")
-                print("Add an item")
-                print("==============================================")
+                self.printheader("Add an item")
                 
                 # Refactor (B): Extract duplicate codes to selectItemType(),
                 # return the option selected.
+
                 # Advance refactoring: error chekcing in selectItemType().
-                print("\nItem types:")
-                print("1. Digital Camera")
-                print("2. Laptop")
-                option = int(input("Enter option to select item type >"))
+                option = self.selectItemType()
+            
 
                 # TO-DO: Write the code to ADD a camcorder or chrome book.
                 if option == 1:
@@ -71,10 +82,7 @@ class ResourceCenter:
                         print("Invalid item type.")
             elif choice == 2:
                 # Refactor (B): Extract duplicate codes to printHeader(message)
-                print("")
-                print("==============================================")
-                print("Display all items")
-                print("==============================================")
+                self.printheader("Display available items")
 
                 # TO-DO: Write the code to display all digital camera or laptop.
                 print(self.inventory.getAvailableCamera())
@@ -84,16 +92,10 @@ class ResourceCenter:
                 
             elif choice == 3:
                 # Refactor (B): use printHeader(mesage)
-                print("")
-                print("==============================================")
-                print("Loan an item")
-                print("==============================================")
+                self.printheader("Loan an item")
                 
                 # Refactor (B): use selectItemType()
-                print("\nItem types:")
-                print("1. Digital Camera")
-                print("2. Laptop")
-                option = int(input("Enter option to select item type >"))
+                option = self.selectItemType()
 
                 # TO-DO: Write the code to LOAN a camcorder or chrome book
                 if option == 1:
@@ -124,16 +126,10 @@ class ResourceCenter:
                 
             elif choice == 4:
                 # Refactor (B): use printHeader(mesage)
-                print("")
-                print("==============================================")
-                print("Return an item")
-                print("==============================================")
+                self.printheader("Return an item")
                 
                 # Refactor (B): use selectItemType()
-                print("\nItem types:")
-                print("1. Digital Camera")
-                print("2. Laptop")
-                option = int(input("Enter option to select item type >"))
+                option = self.selectItemType()
 
                 # TO-DO: Write the code to RETURN a camcorder or chrome book
                 if option == 1:
