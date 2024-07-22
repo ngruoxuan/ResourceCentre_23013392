@@ -21,15 +21,3 @@ class Laptop(Item):
                 if laptop.getIsAvailable() == "Yes":
                     output += str(laptop) + "\n"
         return output
-
-# Example usage
-if __name__ == "__main__":
-    laptop1 = Laptop("L123", "Dell XPS", "Windows 10")
-    laptop2 = Laptop("L124", "MacBook Pro", "macOS")
-    laptop1.setIsAvailable(True)
-    laptop2.setIsAvailable(False)
-
-    # Simulating a list of laptops
-    laptop1.laptopList = [laptop1, laptop2]
-
-    print(laptop1.getAvailableLaptop())
