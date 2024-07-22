@@ -27,6 +27,7 @@ class Inventory():
         # return the found camera, return None if not found.
         # **Don't forget to create test cases for this new method.
         # Check for existing camera
+        
         foundAsset = self.findAsset(assetTag)
         if foundAsset is not None:
             error_message = "Asset already exists."
