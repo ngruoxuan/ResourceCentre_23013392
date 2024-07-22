@@ -4,10 +4,7 @@ class Camera():
     # Camera.py and Laptop.py. Extract these common attributes
     # and methods into a super class, named item.py
     def __init__(self, assetTag, description, opticalZoom):
-        self._assetTag = assetTag
-        self._description = description
-        self._dueDate = ""
-        self._isAvailable = True
+        super().__init__(assetTag, description)
         self._opticalZoom = opticalZoom
     
     def getAssetTag(self):
